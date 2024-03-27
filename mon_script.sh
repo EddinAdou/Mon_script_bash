@@ -3,8 +3,8 @@
 
 if [ $1 = "install" ]; then
     echo "Mise à jour des dépôts et installation du paquet nginx..."
-   sudo  apt update
-   sudo  apt install -y nginx
+    apt update
+    apt install -y nginx
     exit 0
 fi
 install=$1
