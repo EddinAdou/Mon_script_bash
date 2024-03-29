@@ -1,4 +1,4 @@
-/bin/bash
+#!/bin/bash
 
 if [ "$#" -lt 1 ] || ([ "$1" != "user" ] && [  "$1" != "install" ] && [ "$1" != "configure_site" ] && [ "$1" != "active_site" ] && [ "$1" != "add_cronjob" ]); then
         echo "Usage: $0 user <username> <password> or $0 install or $0 configure_site <site_name> <http_port> or $0 active_site <site_name> or $0 add_cronjob <file_name>"
@@ -129,7 +129,7 @@ add_cronjob() {
                 echo "$file_name n'existe pas!"
                 return 1
         fi
-        (crontab -l ; echo "*/5 * * * * echo 'hello world' >>$file_name") | crontab -
+        (crontab -l ; echo "*/5 * * * * ~/disk_monitor.sh >>$file_name") | crontab -
         echo "cron reussi "
 }
 
@@ -167,5 +167,4 @@ else
   echo "Usage: $0 user <username> <password> or $0 install or $0 configure_site <site_name> <http_port> or $0 active_site <site_name> or $0 add_cronjob <file_name>"
   exit 1
 fi
-~                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-~                                          
+~                                             
